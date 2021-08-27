@@ -1,0 +1,15 @@
+sudo: required
+services:
+  - docker
+
+# before_deploy:
+#   - docker login -u $DOCKER_USERNAME  -p $DOCKER_PASSWORD
+
+# deploy:
+#   provider: script
+#   script: docker push <dockeruser/nameofproject>
+#   script: docker push 31070103/node2
+
+script:
+  - docker build -t node .
+  - docker images node
